@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,8 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number"
-            android:text="@string/cost_of_service" />
+            android:inputType="numberDecimal"
+            android:hint="@string/cost_of_service"/>
 
         <TextView
             android:id="@+id/textUnderInput"
@@ -30,14 +30,17 @@
             android:text="@string/how_was_the_service" />
 
         <RadioGroup
+            android:id="@+id/radioGroup"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <RadioButton
                 android:id="@+id/radioAmazing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/amazing_20" />
+                android:text="@string/amazing_20"
+                android:checked="true"/>
+
 
             <RadioButton
                 android:id="@+id/radioGood"
@@ -63,14 +66,13 @@
         app:layout_constraintStart_toStartOf="parent">
 
 
-
         <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/switchRound"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/round_up_tip"
-                android:checked="true"/>
+            android:id="@+id/switchRound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/round_up_tip" />
 
 
         <Button
@@ -80,11 +82,13 @@
             android:text="@string/calculate" />
 
         <TextView
-            android:id="@+id/textUnderButton"
+            android:id="@+id/tipResult"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="right"
-            android:text="@string/tip_amount" />
+            android:gravity="end"
+            android:text="@string/tip_amount"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
